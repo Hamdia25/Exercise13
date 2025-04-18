@@ -1,3 +1,4 @@
+//Hamdi Aden 4/18/25 CSCI1660
 import java.util.*;
 public class Main {
     public static void main(String[] args) {
@@ -33,10 +34,11 @@ class CheckingAccount
         balance = initialBalance;
     }
 
-    public int withdraw(int amount)
+    synchronized public int withdraw(int amount)
     {
-        if (balance > 10){
+        if (balance < 10){
             System.out.println("I'm sorry you have no available funds");
+            System.exit(0);
         }
         if (amount <= balance)
         {
